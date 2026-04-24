@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <h1 class="main-title">♡ MLP Card Checklist ♡</h1>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Comic Sans MS, Arial, sans-serif;
+      background: #ffe4ec;
+      padding: 15px;
+    }
+
+    .main-title {
+      text-align: center;
+      font-size: 45px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      column-gap: 10px;
+      row-gap: 30px;
+
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .checked {
+      opacity: 0.5;
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+
+<body>
+
+
+<div class="grid" id="cards"></div>
+
+<script>
+const categories = {
+
+  "R": [
+    { name: "Twilight Sparkle", image: "TwilightSparkle-R001.png" },
+    { name: "Pinky Pie", image: "R-002.png" },
+    { name: "Rainbow Dash", image: "R-003.png" },
+    { name: "Rarity", image: "R-004.png" },
+    { name: "Fluttershy", image: "R-005.png" },
+    { name: "Applejack", image: "R-006.png" },
+    { name: "Nurse Redheart", image: "R-007.png" },
+    { name: "Cozy Glow", image: "R-008.png" },
+    { name: "Toola Roola", image: "R-009.png" },
+    { name: "Coconut Cream", image: "R-010.png" },
+    { name: "Inky Rose", image: "R-011.png" },
+    { name: "Prince Blueblood", image: "R-012.png" },
+    { name: "Sunny Daze", image: "R-013.png" },
+    { name: "Peachy Pie", image: "R-014.png" },
+    { name: "Bulk Biceps", image: "R-015.png" },
+    { name: "Randolph", image: "R-016.png" },
+    { name: "Fleur De Lis", image: "R-017.png" },
+    { name: "Trouble Shoes", image: "R-018.png" },
+    { name: "Mr. Stripes", image: "R-019.png" },
+    { name: "Plaid Stripes", image: "R-020.png" },
+    { name: "Night Glider", image: "R-021.png" },
+    { name: "Party Favor", image: "R-022.png" },
+    { name: "Double Diamond", image: "R-023.png" },
+    { name: "Snips", image: "R-024.png" },
+    { name: "Snails", image: "R-025.png" },
+    { name: "Gabriella", image: "R-026.png" },
+    { name: "Seabreeze", image: "R-027.png" },
+    { name: "Parasprite", image: "R-028.png" },
+    { name: "Cockatrice", image: "R-029.png" },
+    { name: "Jackalope", image: "R-030.png" }
+  ],
+
+  "HR": [
+    { name: "Twilight Sparkle 1", image: "HR-001.png" },
+    { name: "Pinky Pie 1", image: "HR-002.png" },
+    { name: "Rainbow Dash 1", image: "HR-003.png" },
+    { name: "Rarity 1", image: "HR-004.png" },
+    { name: "Fluttershy 1", image: "HR-005.png" },
+    { name: "Applejack 1", image: "HR-006.png" },
+    { name: "Spike 1", image: "HR-007.png" },
+    { name: "Granny", image: "HR-008.png" },
+    { name: "Sweetie Belle", image: "HR-009.png" },
+    { name: "Scare Master", image: "HR-010.png" },
+    { name: "SisterHooves Strong", image: "HR-011.png" },
+    { name: "Instant Besties", image: "HR-012.png" },
+    { name: "Break Up Break Down", image: "HR-013.png" },
+    { name: "Glam Pony Pals", image: "HR-014.png" },
+    { name: "Winter Wrap Up", image: "HR-015.png" },
+    { name: "Cutie Angels", image: "HR-016.png" },
+    { name: "Cutie Mark Crusaders", image: "HR-017.png" },
+    { name: "Spiritual Friendship", image: "HR-018.png" },
+    { name: "Sing and Trot", image: "HR-019.png" },
+    { name: "Pinkie Surprise", image: "HR-020.png" },
+    { name: "Grand Finale", image: "HR-021.png" },
+    { name: "Yummy Feast", image: "HR-022.png" },
+    { name: "Twilight 2", image: "HR-023.png" },
+    { name: "Pinkie Pie 2", image: "HR-024.png" },
+    { name: "Fluttershy 2", image: "HR-025.png" },
+    { name: "Rainbow Dash 2", image: "HR-026.png" },
+    { name: "Applejack 2", image: "HR-027.png" },
+    { name: "Rarity 2", image: "HR-028.png" },
+    { name: "Spike 2", image: "HR-029.png" },
+    { name: "Princess Celestia", image: "HR-030.png" }
+  ],
+
+  "SR": [
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }
+  ],
+
+  "SSR": [
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" }
+  ],
+
+  "UR": [
+  { name: "Twilight Sparkle", image: "UR-001.png" },
+  { name: "Pinkie Pie", image: "UR-002.png" },
+  { name: "Rainbow Dash", image: "UR-003.png" },
+  { name: "Fluttershy", image: "UR-004.png" },
+  { name: "Rarity", image: "UR-005.png" },
+  { name: "Applejack", image: "UR-006.png" },
+  { name: "Spitfire", image: "UR-007.png" },
+  { name: "Fleetfoot", image: "UR-008.png" },
+  { name: "Thunderlane", image: "UR-009.png" },
+  { name: "Vapor Trail", image: "UR-010.png" },
+  { name: "Maud Pie", image: "UR-011.png" },
+  { name: "Trixie", image: "UR-012.png" },
+  { name: "Starlight Glimmer", image: "UR-013.png" },
+  { name: "Princess Luna", image: "UR-014.png" },
+  { name: "Princess Cadance", image: "UR-015.png" },
+  { name: "Secret Rare", image: "UR-016.png" }
+],
+
+  "LSR": [
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }
+  ],
+
+  "SGR": [
+    { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" }
+  ],
+
+  "ZR": [
+    { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }
+  ],
+
+  "SC": [
+    { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }, { name: "", image: "" },
+    { name: "", image: "" }
+  ],
+
+  "◇ZR": [
+    { name: "", image: "" }
+  ]
+
+};
+
+let checked = JSON.parse(localStorage.getItem("cards")) || {};
+
+function render() {
+  const container = document.getElementById("cards");
+  container.innerHTML = "";
+
+  for (const rarity in categories) {
+    const title = document.createElement("h2");
+    title.textContent = rarity;
+
+    title.style.gridColumn = "1 / -1";
+    title.style.display = "block";
+    title.style.paddingTop = "30px";
+    title.style.paddingBottom = "10px";
+
+    if (rarity === "R" || rarity === "HR") {
+      title.style.fontSize = "36px";
+      title.style.fontWeight = "bold";
+    }
+
+    container.appendChild(title);
+
+    categories[rarity].forEach(card => {
+      if (!card.name) return;
+
+      const cardId = rarity + "-" + card.name;
+
+      const div = document.createElement("div");
+      div.className = "card " + (checked[cardId] ? "checked" : "");
+
+      div.innerHTML = `
+        <img src="${card.image}">
+        <p>${card.name}</p>
+      `;
+
+      div.onclick = () => {
+        checked[cardId] = !checked[cardId];
+        localStorage.setItem("cards", JSON.stringify(checked));
+        render();
+      };
+
+      container.appendChild(div);
+    });
+  }
+}
+
+render();
+</script>
+
+</body>
+</html>
