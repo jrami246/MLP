@@ -5,37 +5,41 @@
   <h1 class="main-title">♡ MLP Card Checklist ♡</h1>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-body {
-  font-family: Comic Sans MS, Arial, sans-serif;
+<style>
+    body {
+      font-family: Comic Sans MS, Arial, sans-serif;
+      background-color: #ffe4ec;
+      color: black;
+      padding: 15px;
+    }
 
-  background-image: url("bats.png");
-  background-repeat: repeat;  
-  background-size: 500px auto;      /* keep original size */
-
-  padding: 15px;
-}
     .main-title {
-  text-align: center;
-  font-size: 45px;
-  font-weight: bold;
-  margin-bottom: 25px;
+      text-align: center;
+      font-size: 45px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: black;
+    }
 
-  color: #eb0000;  
-}
+    #counter {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 25px;
+      color: black;
+    }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       column-gap: 10px;
       row-gap: 30px;
-
       max-width: 1100px;
       margin: 0 auto;
     }
 
     .card {
       background: white;
+      color: black;
       padding: 10px;
       border-radius: 10px;
       text-align: center;
@@ -56,6 +60,8 @@ body {
 
 <body>
 
+<h1 class="main-title">♡ MLP Card Checklist ♡</h1>
+<h2 id="counter">0 / 189</h2>
 
 <div class="grid" id="cards"></div>
 
@@ -129,170 +135,185 @@ const categories = {
   ],
 
   "SR": [
-  { name: "Twilight Sparkle", image: "SR-001.png" },
-  { name: "Pinkie Pie", image: "SR-002.png" },
-  { name: "Rainbow Dash", image: "SR-003.png" },
-  { name: "Fluttershy", image: "SR-004.png" },
-  { name: "Rarity", image: "SR-005.png" },
-  { name: "Applejack", image: "SR-006.png" },
-  { name: "Twilight Sparkle Jumping", image: "SR-007.png" },
-  { name: "Pinkie Pie Smile", image: "SR-008.png" },
-  { name: "Rainbow Dash Jump", image: "SR-009.png" },
-  { name: "Fluttershy Cute", image: "SR-010.png" },
-  { name: "Rarity Smile", image: "SR-011.png" },
-  { name: "Applejack Happy", image: "SR-012.png" },
-  { name: "Apple Bloom", image: "SR-013.png" },
-  { name: "Scootaloo", image: "SR-014.png" },
-  { name: "Sweetie Belle", image: "SR-015.png" },
-  { name: "Octavia", image: "SR-016.png" },
-  { name: "Moon Dancer", image: "SR-017.png" },
-  { name: "Twinkleshine", image: "SR-018.png" },
-  { name: "Lemon Hearts", image: "SR-019.png" },
-  { name: "Minuette", image: "SR-020.png" }
-],
+    { name: "Twilight Sparkle", image: "SR-001.png" },
+    { name: "Pinkie Pie", image: "SR-002.png" },
+    { name: "Rainbow Dash", image: "SR-003.png" },
+    { name: "Fluttershy", image: "SR-004.png" },
+    { name: "Rarity", image: "SR-005.png" },
+    { name: "Applejack", image: "SR-006.png" },
+    { name: "Twilight Sparkle Jumping", image: "SR-007.png" },
+    { name: "Pinkie Pie Smile", image: "SR-008.png" },
+    { name: "Rainbow Dash Jump", image: "SR-009.png" },
+    { name: "Fluttershy Cute", image: "SR-010.png" },
+    { name: "Rarity Smile", image: "SR-011.png" },
+    { name: "Applejack Happy", image: "SR-012.png" },
+    { name: "Apple Bloom", image: "SR-013.png" },
+    { name: "Scootaloo", image: "SR-014.png" },
+    { name: "Sweetie Belle", image: "SR-015.png" },
+    { name: "Octavia", image: "SR-016.png" },
+    { name: "Moon Dancer", image: "SR-017.png" },
+    { name: "Twinkleshine", image: "SR-018.png" },
+    { name: "Lemon Hearts", image: "SR-019.png" },
+    { name: "Minuette", image: "SR-020.png" }
+  ],
 
-"SSR": [
-  // ♠ SPADE (1–13)
-  { name: "Twilight Spade", image: "SSR-001.png" },
-  { name: "Pinkie Pie Spade", image: "SSR-002.png" },
-  { name: "Fluttershy Spade", image: "SSR-003.png" },
-  { name: "Rainbow Dash Spade", image: "SSR-004.png" },
-  { name: "Rarity Spade", image: "SSR-005.png" },
-  { name: "Applejack Spade", image: "SSR-006.png" },
-  { name: "Spike Spade", image: "SSR-007.png" },
-  { name: "Apple Bloom Spade", image: "SSR-008.png" },
-  { name: "Scootaloo Spade", image: "SSR-009.png" },
-  { name: "Sweetie Belle Spade", image: "SSR-010.png" },
-  { name: "Vapor Trail Spade", image: "SSR-011.png" },
-  { name: "Flurry Heart Spade", image: "SSR-012.png" },
-  { name: "Princess Cadance Spade", image: "SSR-013.png" },
+  "SSR": [
+    { name: "Twilight Spade", image: "SSR-001.png" },
+    { name: "Pinkie Pie Spade", image: "SSR-002.png" },
+    { name: "Fluttershy Spade", image: "SSR-003.png" },
+    { name: "Rainbow Dash Spade", image: "SSR-004.png" },
+    { name: "Rarity Spade", image: "SSR-005.png" },
+    { name: "Applejack Spade", image: "SSR-006.png" },
+    { name: "Spike Spade", image: "SSR-007.png" },
+    { name: "Apple Bloom Spade", image: "SSR-008.png" },
+    { name: "Scootaloo Spade", image: "SSR-009.png" },
+    { name: "Sweetie Belle Spade", image: "SSR-010.png" },
+    { name: "Vapor Trail Spade", image: "SSR-011.png" },
+    { name: "Flurry Heart Spade", image: "SSR-012.png" },
+    { name: "Princess Cadance Spade", image: "SSR-013.png" },
 
-  // ♥ HEARTS (14–26)
-  { name: "Twilight Hearts", image: "SSR-014.png" },
-  { name: "Pinkie Pie Hearts", image: "SSR-015.png" },
-  { name: "Fluttershy Hearts", image: "SSR-016.png" },
-  { name: "Rainbow Dash Hearts", image: "SSR-017.png" },
-  { name: "Rarity Hearts", image: "SSR-018.png" },
-  { name: "Applejack Hearts", image: "SSR-019.png" },
-  { name: "Spike Hearts", image: "SSR-020.png" },
-  { name: "Apple Bloom Hearts", image: "SSR-021.png" },
-  { name: "Scootaloo Hearts", image: "SSR-022.png" },
-  { name: "Sweetie Belle Hearts", image: "SSR-023.png" },
-  { name: "Vapor Trail Hearts", image: "SSR-024.png" },
-  { name: "Flurry Heart Hearts", image: "SSR-025.png" },
-  { name: "Princess Cadance Hearts", image: "SSR-026.png" },
+    { name: "Twilight Hearts", image: "SSR-014.png" },
+    { name: "Pinkie Pie Hearts", image: "SSR-015.png" },
+    { name: "Fluttershy Hearts", image: "SSR-016.png" },
+    { name: "Rainbow Dash Hearts", image: "SSR-017.png" },
+    { name: "Rarity Hearts", image: "SSR-018.png" },
+    { name: "Applejack Hearts", image: "SSR-019.png" },
+    { name: "Spike Hearts", image: "SSR-020.png" },
+    { name: "Apple Bloom Hearts", image: "SSR-021.png" },
+    { name: "Scootaloo Hearts", image: "SSR-022.png" },
+    { name: "Sweetie Belle Hearts", image: "SSR-023.png" },
+    { name: "Vapor Trail Hearts", image: "SSR-024.png" },
+    { name: "Flurry Heart Hearts", image: "SSR-025.png" },
+    { name: "Princess Cadance Hearts", image: "SSR-026.png" },
 
-  // ♦ DIAMOND (27–39)
-  { name: "Twilight Diamond", image: "SSR-027.png" },
-  { name: "Pinkie Pie Diamond", image: "SSR-028.png" },
-  { name: "Fluttershy Diamond", image: "SSR-029.png" },
-  { name: "Rainbow Dash Diamond", image: "SSR-030.png" },
-  { name: "Rarity Diamond", image: "SSR-031.png" },
-  { name: "Applejack Diamond", image: "SSR-032.png" },
-  { name: "Spike Diamond", image: "SSR-033.png" },
-  { name: "Apple Bloom Diamond", image: "SSR-034.png" },
-  { name: "Scootaloo Diamond", image: "SSR-035.png" },
-  { name: "Sweetie Belle Diamond", image: "SSR-036.png" },
-  { name: "Vapor Trail Diamond", image: "SSR-037.png" },
-  { name: "Flurry Heart Diamond", image: "SSR-038.png" },
-  { name: "Princess Cadance Diamond", image: "SSR-039.png" },
+    { name: "Twilight Diamond", image: "SSR-027.png" },
+    { name: "Pinkie Pie Diamond", image: "SSR-028.png" },
+    { name: "Fluttershy Diamond", image: "SSR-029.png" },
+    { name: "Rainbow Dash Diamond", image: "SSR-030.png" },
+    { name: "Rarity Diamond", image: "SSR-031.png" },
+    { name: "Applejack Diamond", image: "SSR-032.png" },
+    { name: "Spike Diamond", image: "SSR-033.png" },
+    { name: "Apple Bloom Diamond", image: "SSR-034.png" },
+    { name: "Scootaloo Diamond", image: "SSR-035.png" },
+    { name: "Sweetie Belle Diamond", image: "SSR-036.png" },
+    { name: "Vapor Trail Diamond", image: "SSR-037.png" },
+    { name: "Flurry Heart Diamond", image: "SSR-038.png" },
+    { name: "Princess Cadance Diamond", image: "SSR-039.png" },
 
-  // ♣ CLOVER (40–52)
-  { name: "Twilight Clover", image: "SSR-040.png" },
-  { name: "Pinkie Pie Clover", image: "SSR-041.png" },
-  { name: "Fluttershy Clover", image: "SSR-042.png" },
-  { name: "Rainbow Dash Clover", image: "SSR-043.png" },
-  { name: "Rarity Clover", image: "SSR-044.png" },
-  { name: "Applejack Clover", image: "SSR-045.png" },
-  { name: "Spike Clover", image: "SSR-046.png" },
-  { name: "Apple Bloom Clover", image: "SSR-047.png" },
-  { name: "Scootaloo Clover", image: "SSR-048.png" },
-  { name: "Sweetie Belle Clover", image: "SSR-049.png" },
-  { name: "Vapor Trail Clover", image: "SSR-050.png" },
-  { name: "Flurry Heart Clover", image: "SSR-051.png" },
-  { name: "Princess Cadance Clover", image: "SSR-052.png" },
+    { name: "Twilight Clover", image: "SSR-040.png" },
+    { name: "Pinkie Pie Clover", image: "SSR-041.png" },
+    { name: "Fluttershy Clover", image: "SSR-042.png" },
+    { name: "Rainbow Dash Clover", image: "SSR-043.png" },
+    { name: "Rarity Clover", image: "SSR-044.png" },
+    { name: "Applejack Clover", image: "SSR-045.png" },
+    { name: "Spike Clover", image: "SSR-046.png" },
+    { name: "Apple Bloom Clover", image: "SSR-047.png" },
+    { name: "Scootaloo Clover", image: "SSR-048.png" },
+    { name: "Sweetie Belle Clover", image: "SSR-049.png" },
+    { name: "Vapor Trail Clover", image: "SSR-050.png" },
+    { name: "Flurry Heart Clover", image: "SSR-051.png" },
+    { name: "Princess Cadance Clover", image: "SSR-052.png" },
 
-  // 2 EXTRA (53–54)
-  { name: "Queen Chrysalis Joker", image: "SSR-053.png" },
-  { name: "Princess Celestia Joker", image: "SSR-054.png" }
-],
+    { name: "Queen Chrysalis Joker", image: "SSR-053.png" },
+    { name: "Princess Celestia Joker", image: "SSR-054.png" }
+  ],
 
   "UR": [
-  { name: "Twilight Sparkle", image: "UR-001.png" },
-  { name: "Pinkie Pie", image: "UR-002.png" },
-  { name: "Rainbow Dash", image: "UR-003.png" },
-  { name: "Fluttershy", image: "UR-004.png" },
-  { name: "Rarity", image: "UR-005.png" },
-  { name: "Applejack", image: "UR-006.png" },
-  { name: "Spitfire", image: "UR-007.png" },
-  { name: "Fleetfoot", image: "UR-008.png" },
-  { name: "Thunderlane", image: "UR-009.png" },
-  { name: "Vapor Trail", image: "UR-010.png" },
-  { name: "Maud Pie", image: "UR-011.png" },
-  { name: "Trixie", image: "UR-012.png" },
-  { name: "Starlight Glimmer", image: "UR-013.png" },
-  { name: "Princess Luna", image: "UR-014.png" },
-  { name: "Princess Cadance", image: "UR-015.png" },
-  { name: "Secret Rare", image: "UR-016.png" }
-],
+    { name: "Twilight Sparkle", image: "UR-001.png" },
+    { name: "Pinkie Pie", image: "UR-002.png" },
+    { name: "Rainbow Dash", image: "UR-003.png" },
+    { name: "Fluttershy", image: "UR-004.png" },
+    { name: "Rarity", image: "UR-005.png" },
+    { name: "Applejack", image: "UR-006.png" },
+    { name: "Spitfire", image: "UR-007.png" },
+    { name: "Fleetfoot", image: "UR-008.png" },
+    { name: "Thunderlane", image: "UR-009.png" },
+    { name: "Vapor Trail", image: "UR-010.png" },
+    { name: "Maud Pie", image: "UR-011.png" },
+    { name: "Trixie", image: "UR-012.png" },
+    { name: "Starlight Glimmer", image: "UR-013.png" },
+    { name: "Princess Luna", image: "UR-014.png" },
+    { name: "Princess Cadance", image: "UR-015.png" },
+    { name: "Secret Rare", image: "UR-016.png" }
+  ],
 
   "LSR": [
-  { name: "Twilight Sparkle", image: "LSR-001.png" },
-  { name: "Pinkie Pie", image: "LSR-002.png" },
-  { name: "Rainbow Dash", image: "LSR-003.png" },
-  { name: "Flutteryshy", image: "LSR-004.png" },
-  { name: "Rarity", image: "LSR-005.png" },
-  { name: "Applejack", image: "LSR-006.png" },
-  { name: "Princess Celestia", image: "LSR-007.png" },
-  { name: "Princess Luna", image: "LSR-008.png" },
-  { name: "Apple Bloom", image: "LSR-009.png" },
-  { name: "Scootaloo", image: "LSR-010.png" },
-  { name: "Sweetie Belle", image: "LSR-011.png" },
-  { name: "Sunset Shimmer", image: "LSR-012.png" },
-  { name: "Spike", image: "LSR-013.png" },
-  { name: "Shining Armor", image: "LSR-014.png" },
-  { name: "Maude Pie", image: "LSR-015.png" },
-  { name: "Cheese Sandwich", image: "LSR-016.png" }
-],
+    { name: "Twilight Sparkle", image: "LSR-001.png" },
+    { name: "Pinkie Pie", image: "LSR-002.png" },
+    { name: "Rainbow Dash", image: "LSR-003.png" },
+    { name: "Flutteryshy", image: "LSR-004.png" },
+    { name: "Rarity", image: "LSR-005.png" },
+    { name: "Applejack", image: "LSR-006.png" },
+    { name: "Princess Celestia", image: "LSR-007.png" },
+    { name: "Princess Luna", image: "LSR-008.png" },
+    { name: "Apple Bloom", image: "LSR-009.png" },
+    { name: "Scootaloo", image: "LSR-010.png" },
+    { name: "Sweetie Belle", image: "LSR-011.png" },
+    { name: "Sunset Shimmer", image: "LSR-012.png" },
+    { name: "Spike", image: "LSR-013.png" },
+    { name: "Shining Armor", image: "LSR-014.png" },
+    { name: "Maude Pie", image: "LSR-015.png" },
+    { name: "Cheese Sandwich", image: "LSR-016.png" }
+  ],
 
   "SGR": [
-  { name: "Twilight Sparkle", image: "SGR-001.png" },
-  { name: "Pinkie Pie", image: "SGR-002.png" },
-  { name: "Rainbow Dash", image: "SGR-003.png" },
-  { name: "Rarity", image: "SGR-004.png" },
-  { name: "Fluttershy", image: "SGR-005.png" },
-  { name: "Applejack", image: "SGR-006.png" },
-  { name: "Spike", image: "SGR-007.png" },
-  { name: "Princess Celestia", image: "SGR-008.png" }
-],
+    { name: "Twilight Sparkle", image: "SGR-001.png" },
+    { name: "Pinkie Pie", image: "SGR-002.png" },
+    { name: "Rainbow Dash", image: "SGR-003.png" },
+    { name: "Rarity", image: "SGR-004.png" },
+    { name: "Fluttershy", image: "SGR-005.png" },
+    { name: "Applejack", image: "SGR-006.png" },
+    { name: "Spike", image: "SGR-007.png" },
+    { name: "Princess Celestia", image: "SGR-008.png" }
+  ],
 
- "ZR": [
-  { name: "Twilight Sparkle", image: "ZR-001.png" },
-  { name: "Pinkie Pie", image: "ZR-002.png" },
-  { name: "Rainbow Dash", image: "ZR-003.png" },
-  { name: "Rarity", image: "ZR-004.png" },
-  { name: "Fluttershy", image: "ZR-005.png" },
-  { name: "Applejack", image: "ZR-006.png" },
-  { name: "Cake Party", image: "ZR-007.png" }
-],
+  "ZR": [
+    { name: "Twilight Sparkle", image: "ZR-001.png" },
+    { name: "Pinkie Pie", image: "ZR-002.png" },
+    { name: "Rainbow Dash", image: "ZR-003.png" },
+    { name: "Rarity", image: "ZR-004.png" },
+    { name: "Fluttershy", image: "ZR-005.png" },
+    { name: "Applejack", image: "ZR-006.png" },
+    { name: "Cake Party", image: "ZR-007.png" }
+  ],
 
- "SC": [
-  { name: "Twilight Sparkle", image: "SC-001.png" },
-  { name: "Pinkie Pie", image: "SC-002.png" },
-  { name: "Rainbow Dash", image: "SC-003.png" },
-  { name: "Rarity", image: "SC-004.png" },
-  { name: "Fluttershy", image: "SC-005.png" },
-  { name: "Applejack", image: "SC-006.png" },
-  { name: "Twilight 2", image: "SC-007.png" }
-],
+  "SC": [
+    { name: "Twilight Sparkle", image: "SC-001.png" },
+    { name: "Pinkie Pie", image: "SC-002.png" },
+    { name: "Rainbow Dash", image: "SC-003.png" },
+    { name: "Rarity", image: "SC-004.png" },
+    { name: "Fluttershy", image: "SC-005.png" },
+    { name: "Applejack", image: "SC-006.png" },
+    { name: "Twilight 2", image: "SC-007.png" }
+  ],
 
-"◇ZR": [
-  { name: "Rarest", image: "DZ-001.png" }
-]
-
+  "◇ZR": [
+    { name: "Rarest", image: "DZ-001.png" }
+  ]
 };
 
 let checked = JSON.parse(localStorage.getItem("cards")) || {};
+
+function updateCounter() {
+  let total = 0;
+  let collected = 0;
+
+  for (const rarity in categories) {
+    categories[rarity].forEach(card => {
+      if (!card.name) return;
+
+      total++;
+
+      const cardId = rarity + "-" + card.name;
+
+      if (checked[cardId]) {
+        collected++;
+      }
+    });
+  }
+
+  document.getElementById("counter").textContent = collected + " / " + total + " collected";
+}
 
 function render() {
   const container = document.getElementById("cards");
@@ -306,13 +327,9 @@ function render() {
     title.style.display = "block";
     title.style.paddingTop = "30px";
     title.style.paddingBottom = "10px";
-    title.style.color = "#eb0000";
-    title.style.fontSize = "40px"; 
-
-    if (rarity === "R" || rarity === "HR") {
-      title.style.fontSize = "36px";
-      title.style.fontWeight = "bold";
-    }
+    title.style.color = "black";
+    title.style.fontSize = "40px";
+    title.style.fontWeight = "bold";
 
     container.appendChild(title);
 
@@ -338,6 +355,8 @@ function render() {
       container.appendChild(div);
     });
   }
+
+  updateCounter();
 }
 
 render();
